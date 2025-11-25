@@ -1,0 +1,12 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore compiled Python files inside any folder
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Ignore data directory inside Experiments
+Experiments/data/
