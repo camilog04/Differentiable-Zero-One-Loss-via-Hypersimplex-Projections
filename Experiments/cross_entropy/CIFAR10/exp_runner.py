@@ -37,7 +37,7 @@ def run_seed(seed: int):
             "batch_size": bs,
             "device": "cuda",  # NN_CE should map this to torch.device
         })
-        cmd = f"CUDA_VISIBLE_DEVICES=0 python -m NN_CE{args_str}"
+        cmd = f"CUDA_VISIBLE_DEVICES=0 python -m NN_CE {args_str}"
         print("  ", cmd)
         procs.append(sp.Popen(cmd, shell=True))
 

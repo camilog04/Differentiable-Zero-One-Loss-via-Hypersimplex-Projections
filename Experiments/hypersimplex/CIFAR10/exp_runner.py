@@ -28,17 +28,17 @@ def run_seed(seed: int):
     print(f">>> Launching seed={seed} (7 jobs in parallel)")
     procs = []
 
-    # # First 4 batch sizes -> GPU 0
-    # for bs in BATCH_SIZES[:4]:
-    #     args_str = build_args_str({
-    #         **COMMON,
-    #         "seed": seed,
-    #         "batch_size": bs,
-    #         "device": "cuda", 
-    #     })
-    #     cmd = f"CUDA_VISIBLE_DEVICES=0 python -m NN_projected {args_str}"
-    #     print("  ", cmd)
-    #     procs.append(sp.Popen(cmd, shell=True))
+    # First 4 batch sizes -> GPU 0
+    for bs in BATCH_SIZES[:3]:
+        args_str = build_args_str({
+            **COMMON,
+            "seed": seed,
+            "batch_size": bs,
+            "device": "cuda", 
+        })
+        cmd = f"CUDA_VISIBLE_DEVICES=0 python -m NN_projected {args_str}"
+        print("  ", cmd)
+        procs.append(sp.Popen(cmd, shell=True))
 
     # Last 3 batch sizes -> GPU 1
     for bs in BATCH_SIZES[4:]:

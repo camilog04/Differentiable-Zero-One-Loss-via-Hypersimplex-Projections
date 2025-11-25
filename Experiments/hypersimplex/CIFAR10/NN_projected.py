@@ -20,9 +20,10 @@ import sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../.."))
 sys.path.insert(0, ROOT)
 
-from src.soft_binary_arg_max_ops import (
-    soft_binary_argmax,
-)
+import os
+import sys
+
+
 
 # Directory where this script lives: .../cross_entropy/CIFAR10
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -35,6 +36,15 @@ DATA_DIR = os.path.join(EXPERIMENTS_DIR, "data")
 DATA_DIR = os.path.abspath(DATA_DIR)
 
 print("USING DATA_DIR =", DATA_DIR)
+
+# Go up from Experiments/.../... to the repo root
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, "../../../"))
+
+# Add the repo root to PYTHONPATH
+sys.path.append(PROJECT_ROOT)
+
+# Now this works:
+from src.soft_binary_arg_max_ops import soft_binary_argmax
 
 
 def get_hypersimplex_tensor(n,p):

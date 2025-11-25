@@ -11,11 +11,10 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision.datasets import FashionMNIST
 
-import torchsort
-
 NUM_CLASSES = 10
 
 import os 
+import sys 
 
 # Directory where this script lives: .../cross_entropy/CIFAR10
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -28,6 +27,18 @@ DATA_DIR = os.path.join(EXPERIMENTS_DIR, "data")
 DATA_DIR = os.path.abspath(DATA_DIR)
 
 print("USING DATA_DIR =", DATA_DIR)
+
+
+# Go up from Experiments/.../... to the repo root
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, "../../../"))
+
+# Add the repo root to PYTHONPATH
+sys.path.append(PROJECT_ROOT)
+
+# Now this works:
+from src.soft_binary_arg_max_ops import soft_binary_argmax
+
+
 
 def get_hypersimplex_tensor(n,p):
     # Ensure p is between 0 and 1
@@ -44,7 +55,7 @@ def hypersimplex_loss(input, target, regularization="l2", regularization_strengt
     n = input.shape[0]
     hypersimplex_basis = get_hypersimplex_tensor(n, 0.5).to(input.device)
     # computes projection into 10 hypersimplices
-    hyper_simplex_projection = torchsort.conv_proj.apply(input.T, hypersimplex_basis, regularization, regularization_strength).T
+    hyper_simplex_projection = soft_binary_argmax.apply(input.T, hypersimplex_basis, regularization, regularization_strength).T
     return F.mse_loss(hyper_simplex_projection, target).mean()
 
 

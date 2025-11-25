@@ -1,5 +1,6 @@
-This ZIP contains an anonymized implementation used for the experiments.
+This REPO contains an anonymized implementation used for the experiments and JIT compilation CUDA code
 No authors or institutions are referenced.
+
 Instructions:
 1. Install requirements listed in requirements.txt.
 2. Replicate experiments:
@@ -11,5 +12,5 @@ Instructions:
     loss_fn := cross_entropy, hinge_loss, hypersimplex, MSE_multiclass
     dataset := CIFAR10, FashionMNIST
 
-3. To replicate the statistical tests run error_bars_statistical_tsts.ipynb
+3. To replicate the statistical tests run error_bars_statistical_tets.ipynb
 4. An illustration for the method can be found in SBAM_Illustration.ipynb
