@@ -1,4 +1,4 @@
-This REPO contains an anonymized implementation used for the experiments and JIT compilation CUDA code
+This REPO contains an anonymized implementation used for the experiments and JIT compilation CUDA code of soft binary argmax @k and the Hypersimplex Loss
 No authors or institutions are referenced.
 
 Instructions:
