@@ -6,8 +6,8 @@ BATCH_SIZES = [128, 256, 512, 1024, 2048, 4096, 8192]
 # Common args
 COMMON = {
     "loss_fn": "cross_entropy",
-    "regularization": "kl",
-    "regularization_strength": 1.0,
+    "regularization": "kl", # not used for this experiment
+    "regularization_strength": 1.0, # not used for this experiment
     "hidden_size": 64,
     "epochs": 600,
     "plot": False,
@@ -28,12 +28,25 @@ def run_seed(seed: int):
     print(f">>> Launching seed={seed} (7 jobs in parallel)")
     procs = []
 
-    for bs in BATCH_SIZES:
+    # First 4 jobs on GPU 0
+    for bs in BATCH_SIZES[:4]:
         args_str = build_args_str({
             **COMMON,
             "seed": seed,
             "batch_size": bs,
-            "device": "cuda",  # NN_CE should map this to torch.device
+            "device": "cuda",
+        })
+        cmd = f"CUDA_VISIBLE_DEVICES=0 python -m NN_CE {args_str}"
+        print("  ", cmd)
+        procs.append(sp.Popen(cmd, shell=True))
+
+    # Last 3 jobs on GPU 1
+    for bs in BATCH_SIZES[4:]:
+        args_str = build_args_str({
+            **COMMON,
+            "seed": seed,
+            "batch_size": bs,
+            "device": "cuda",
         })
         cmd = f"CUDA_VISIBLE_DEVICES=1 python -m NN_CE {args_str}"
         print("  ", cmd)

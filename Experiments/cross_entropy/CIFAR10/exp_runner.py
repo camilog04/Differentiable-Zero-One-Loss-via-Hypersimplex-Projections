@@ -7,8 +7,8 @@ BATCH_SIZES = [128, 256, 512, 1024, 2048, 4096, 8192]
 # Common args you want to pass to NN_CE (tweak as needed)
 COMMON = {
     "loss_fn": "cross_entropy",
-    "regularization": "kl",
-    "regularization_strength": 1.0,
+    "regularization": "kl", # not used for this experiment
+    "regularization_strength": 1.0, # not used for this experiment
     "hidden_size": 64,
     "epochs": 600,
     "plot": False,

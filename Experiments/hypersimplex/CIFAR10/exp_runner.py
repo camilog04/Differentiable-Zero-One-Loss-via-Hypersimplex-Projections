@@ -29,7 +29,7 @@ def run_seed(seed: int):
     procs = []
 
     # First 4 batch sizes -> GPU 0
-    for bs in BATCH_SIZES[:3]:
+    for bs in BATCH_SIZES[:4]:
         args_str = build_args_str({
             **COMMON,
             "seed": seed,
