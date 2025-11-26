@@ -40,7 +40,7 @@ valid_data = lgb.Dataset(infile_valid)
 # Training
 res = {}
 start = time.time()
-logging.info("Lightgbm traning starting (AUC, HIGGS)...")
+logging.info("Lightgbm traning starting (AUC, kkbox)...")
 bst = lgb.train(
     params, train_data, 
     valid_sets=[valid_data], valid_names=["valid"],

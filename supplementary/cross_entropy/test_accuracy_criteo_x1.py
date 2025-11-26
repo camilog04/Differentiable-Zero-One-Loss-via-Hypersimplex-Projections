@@ -7,8 +7,6 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-#os.chdir('..')
-
 # Parameters are borrowed from the official experiment doc:
 # https://lightgbm.readthedocs.io/en/latest/Experiments.html
 params = {"max_bin" : 255,
@@ -41,7 +39,7 @@ valid_data = lgb.Dataset(infile_valid)
 # Training
 res = {}
 start = time.time()
-logging.info("Lightgbm traning starting (AUC, HIGGS)...")
+logging.info("Lightgbm traning starting (AUC, criteo)...")
 bst = lgb.train(
     params, train_data, 
     valid_sets=[valid_data], valid_names=["valid"],
