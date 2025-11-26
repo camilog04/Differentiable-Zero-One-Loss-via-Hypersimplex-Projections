@@ -9,7 +9,7 @@ Instructions:
 
     b) in general 
     cd Experiments/{loss_fn}/{dataset} && run python exp_runner.py
-    loss_fn := cross_entropy, hinge_loss, hypersimplex, MSE_multiclass
+    loss_fn := cross_entropy, hinge_loss, hypersimplex (ours), MSE_multiclass
     dataset := CIFAR10, FashionMNIST
 
 3. To replicate the statistical tests run error_bars_statistical_tets.ipynb
