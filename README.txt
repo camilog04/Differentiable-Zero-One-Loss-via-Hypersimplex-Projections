@@ -13,4 +13,5 @@ Instructions:
     dataset := CIFAR10, FashionMNIST
 
 3. To replicate the statistical tests run error_bars_statistical_tets.ipynb
-4. An illustration for the method can be found in SBAM_Illustration.ipynb
+4. To replicate supplementary experiments see the supplementary directory
+5. (Important) An illustration for the method can be found in SBAM_Illustration.ipynb

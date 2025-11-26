@@ -3,3 +3,4 @@ torchvision
 numpy
 matplotlib
 Ninja
+lightgbm==4.6.0
