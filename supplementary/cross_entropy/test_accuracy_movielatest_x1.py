@@ -29,8 +29,8 @@ params = {"max_bin" : 255,
 
 # Note that we have convert the original raw data into a pure libsvm format.
 # # For more details, pls refer to: https://github.com/guolinke/boosting_tree_benchmarks/tree/master/data
-infile_train = "../data/movielense_x1/train.libsvm"
-infile_valid = "../data/movielense_x1/valid.libsvm"
+infile_train = "../data/movielens/train.libsvm"
+infile_valid = "../data/movielens/valid.libsvm"
 
 
 # Load data

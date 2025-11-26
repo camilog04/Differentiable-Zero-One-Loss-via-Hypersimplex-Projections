@@ -10,3 +10,4 @@ Steps to replicate
     - KKD12: https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html#kdd2012
     - MovieLensLatest_x1: https://huggingface.co/datasets/reczoo/MovielensLatest_x1  
 2) run each .py for either cross entropy loss or hypersimplex
+    - example: cd supplementary/cross_entropy && python test_accuracy_avazu_x1.py
