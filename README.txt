@@ -15,3 +15,19 @@ Instructions:
 3. To replicate the statistical tests run error_bars_statistical_tets.ipynb
 4. To replicate supplementary experiments see the supplementary directory
 5. (Important) An illustration for the method can be found in SBAM_Illustration.ipynb
+
+📄 Paper
+
+Differentiable Zero-One Loss via Hypersimplex Projections
+Camilo Gomez, Pengyang Wang, Liansheng Tang
+
+Accepted at PAKDD 2026
+
+If you use this work, please cite:
+
+@inproceedings{gomez2026hypersimplex,
+  title={Differentiable Zero-One Loss via Hypersimplex Projections},
+  author={Gomez, Camilo and Wang, Pengyang and Tang, Liansheng},
+  booktitle={Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)},
+  year={2026}
+}
